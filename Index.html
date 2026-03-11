@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosquées de France — Annuaire national</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--em:#0d6b4a;--emd:#094d36;--eml:#1a8a60;--go:#c9962a;--gl:#e8b84b;--cr:#faf6ef;--cd:#f0e9da;--tx:#1a1a1a;--ts:#5a5a5a;--wh:#ffffff;--sh:0 4px 24px rgba(13,107,74,.10);--shh:0 8px 40px rgba(13,107,74,.20);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--cr);color:var(--tx);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;top:0;right:0;width:700px;height:700px;background:radial-gradient(circle,rgba(201,150,42,.06) 0%,transparent 70%);pointer-events:none;z-index:0;}
+header{background:linear-gradient(135deg,var(--emd) 0%,var(--em) 55%,var(--eml) 100%);position:relative;overflow:hidden;box-shadow:0 4px 40px rgba(9,77,54,.4);}
+.hpat{position:absolute;inset:0;opacity:.07;background-image:repeating-linear-gradient(45deg,var(--go) 0,var(--go) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-45deg,var(--go) 0,var(--go) 1px,transparent 0,transparent 50%);background-size:28px 28px;}
+.hline{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--go),var(--gl),var(--go),transparent);}
+.hinner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:26px 24px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.logo{display:flex;align-items:center;gap:16px;}
+.lic{width:54px;height:54px;background:rgba(255,255,255,.12);border:1.5px solid rgba(201,150,42,.5);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:27px;backdrop-filter:blur(8px);flex-shrink:0;}
+.logo h1{font-family:'Amiri',serif;font-size:1.65rem;color:#fff;line-height:1.2;}
+.logo .ar{font-family:'Amiri',serif;font-size:1.05rem;color:var(--gl);direction:rtl;display:block;}
+.logo .sub{font-size:.73rem;color:rgba(255,255,255,.6);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
+.hstats{display:flex;gap:24px;}
+.hs{text-align:center;}
+.hsn{font-family:'Amiri',serif;font-size:1.75rem;font-weight:700;color:var(--gl);display:block;line-height:1;}
+.hsl{font-size:.7rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;}
+.pbar{background:linear-gradient(90deg,var(--emd),var(--em));border-bottom:1px solid rgba(201,150,42,.3);}
+.pbari{max-width:1240px;margin:0 auto;padding:9px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.prow{display:flex;gap:4px;flex-wrap:wrap;align-items:center;}
+.pp{background:rgba(255,255,255,.1);border:1px solid rgba(201,150,42,.25);border-radius:20px;padding:4px 11px;font-size:.74rem;color:#fff;display:flex;gap:5px;align-items:center;}
+.pp strong{color:var(--gl);}
+.pp.now{background:rgba(201,150,42,.25);border-color:var(--gl);}
+.pd{font-size:.72rem;color:rgba(255,255,255,.55);}
+.wrap{max-width:1240px;margin:0 auto;padding:30px 24px;position:relative;z-index:1;}
+.sa{margin-bottom:28px;}
+.sa h2{font-family:'Amiri',serif;font-size:1.55rem;color:var(--emd);margin-bottom:14px;}
+.sr{display:flex;gap:10px;flex-wrap:wrap;}
+.sw{flex:1;min-width:240px;position:relative;}
+.sw .si2{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:17px;pointer-events:none;}
+.si{width:100%;padding:13px 14px 13px 44px;background:#fff;border:2px solid var(--cd);border-radius:13px;font-family:'DM Sans',sans-serif;font-size:.92rem;color:var(--tx);transition:all .2s;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+.si:focus{outline:none;border-color:var(--em);box-shadow:0 0 0 4px rgba(13,107,74,.1);}
+.fs{padding:13px 38px 13px 14px;background:#fff;border:2px solid var(--cd);border-radius:13px;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--tx);cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230d6b4a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+.fs:focus{outline:none;border-color:var(--em);}
+.lb{padding:13px 20px;background:var(--em);color:#fff;border:none;border-radius:13px;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:7px;white-space:nowrap;box-shadow:0 4px 14px rgba(13,107,74,.3);}
+.lb:hover{background:var(--emd);transform:translateY(-1px);}
+.tabs{display:flex;gap:4px;background:#fff;padding:4px;border-radius:12px;border:1px solid var(--cd);width:fit-content;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+.tab{padding:8px 18px;border:none;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:.83rem;font-weight:500;cursor:pointer;background:transparent;color:var(--ts);transition:all .2s;}
+.tab.on{background:var(--em);color:#fff;box-shadow:0 2px 8px rgba(13,107,74,.3);}
+.rinfo{font-size:.82rem;color:var(--ts);margin-bottom:16px;}
+.rinfo strong{color:var(--emd);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--sh);transition:all .28s ease;border:1px solid rgba(13,107,74,.06);cursor:pointer;animation:cin .38s ease both;}
+@keyframes cin{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shh);border-color:rgba(13,107,74,.14);}
+.ct{height:88px;position:relative;overflow:hidden;}
+.ct svg{position:absolute;inset:0;width:100%;height:100%;opacity:.14;}
+.cti{position:absolute;inset:0;padding:14px 16px;display:flex;justify-content:space-between;align-items:flex-start;}
+.br{background:rgba(255,255,255,.2);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.66rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:20px;}
+.bc{background:rgba(201,150,42,.88);color:#fff;font-size:.66rem;font-weight:700;padding:3px 8px;border-radius:20px;}
+.bt{position:absolute;bottom:7px;left:16px;background:rgba(0,0,0,.25);color:rgba(255,255,255,.88);font-size:.63rem;padding:2px 7px;border-radius:10px;font-style:italic;}
+.cb{padding:15px 17px 13px;}
+.mn{font-family:'Amiri',serif;font-size:1.15rem;color:var(--emd);line-height:1.25;}
+.mnar{font-family:'Amiri',serif;font-size:.88rem;color:var(--go);direction:rtl;display:block;margin-bottom:7px;}
+.mad{font-size:.76rem;color:var(--ts);display:flex;align-items:flex-start;gap:5px;margin-bottom:10px;line-height:1.4;}
+.pm{background:var(--cr);border-radius:9px;padding:8px 9px;display:flex;justify-content:space-between;margin-bottom:11px;border:1px solid var(--cd);}
+.pi{text-align:center;}
+.pn{font-size:.6rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ts);display:block;margin-bottom:2px;}
+.pt{font-size:.77rem;font-weight:600;color:var(--emd);}
+.pt.nw{color:var(--go);}
+.chs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:11px;}
+.ch{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:20px;font-size:.67rem;font-weight:600;text-decoration:none;transition:all .18s;border:1.5px solid;}
+.cw{color:var(--em);border-color:rgba(13,107,74,.28);background:rgba(13,107,74,.05);}
+.cw:hover{background:var(--em);color:#fff;}
+.cf{color:#1877f2;border-color:rgba(24,119,242,.28);background:rgba(24,119,242,.05);}
+.cf:hover{background:#1877f2;color:#fff;}
+.ci{color:#e1306c;border-color:rgba(225,48,108,.28);background:rgba(225,48,108,.05);}
+.ci:hover{background:#e1306c;color:#fff;}
+.cy{color:#ff0000;border-color:rgba(255,0,0,.28);background:rgba(255,0,0,.05);}
+.cy:hover{background:#ff0000;color:#fff;}
+.ctg{color:#229ed9;border-color:rgba(34,158,217,.28);background:rgba(34,158,217,.05);}
+.ctg:hover{background:#229ed9;color:#fff;}
+.cph{color:#555;border-color:rgba(0,0,0,.14);background:rgba(0,0,0,.03);}
+.cf2{display:flex;gap:7px;}
+.bdon{flex:1;padding:9px 12px;background:linear-gradient(135deg,var(--go),var(--gl));color:#fff;border:none;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:.79rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;box-shadow:0 3px 10px rgba(201,150,42,.33);}
+.bdon:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(201,150,42,.48);}
+.bm{padding:9px 13px;background:transparent;border:1.5px solid rgba(13,107,74,.22);color:var(--em);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:.79rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.bm:hover{background:var(--em);color:#fff;border-color:var(--em);}
+.empty{text-align:center;padding:50px 20px;grid-column:1/-1;}
+.empty .ico{font-size:44px;margin-bottom:14px;display:block;}
+.empty h3{font-family:'Amiri',serif;font-size:1.35rem;color:var(--emd);margin-bottom:7px;}
+.empty p{font-size:.87rem;color:var(--ts);}
+.mo{position:fixed;inset:0;background:rgba(9,40,27,.72);backdrop-filter:blur(6px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .28s;}
+.mo.open{opacity:1;pointer-events:all;}
+.modal{background:#fff;border-radius:22px;width:100%;max-width:620px;max-height:92vh;overflow-y:auto;transform:scale(.95) translateY(18px);transition:all .28s;position:relative;}
+.mo.open .modal{transform:scale(1) translateY(0);}
+.mh{height:150px;position:relative;overflow:hidden;border-radius:22px 22px 0 0;}
+.mho{position:absolute;inset:0;background:linear-gradient(to top,rgba(9,77,54,.82),transparent);display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px;}
+.mhar{font-family:'Amiri',serif;font-size:1rem;color:var(--gl);direction:rtl;}
+.mhn{font-family:'Amiri',serif;font-size:1.6rem;color:#fff;line-height:1.2;}
+.mcl{position:absolute;top:14px;right:14px;width:34px;height:34px;background:rgba(255,255,255,.2);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);border-radius:50%;color:#fff;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.mcl:hover{background:rgba(255,255,255,.35);}
+.mb{padding:22px;}
+.ms{margin-bottom:22px;}
+.mst{font-family:'Amiri',serif;font-size:1.05rem;color:var(--emd);margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.mst::after{content:'';flex:1;height:1px;background:var(--cd);}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
+.pit{background:var(--cr);border-radius:10px;padding:11px;text-align:center;border:1px solid var(--cd);}
+.pit.nw{background:linear-gradient(135deg,var(--em),var(--eml));border-color:var(--em);}
+.pit.nw .pn2,.pit.nw .pt2{color:#fff;}
+.pn2{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ts);display:block;margin-bottom:3px;}
+.pt2{font-size:1.05rem;font-weight:700;color:var(--emd);}
+.ni{padding:13px;background:var(--cr);border-radius:10px;margin-bottom:9px;border-left:3px solid var(--em);}
+.ni h4{font-size:.87rem;font-weight:600;margin-bottom:3px;}
+.ni p{font-size:.79rem;color:var(--ts);line-height:1.5;}
+.nd{font-size:.67rem;color:var(--go);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;display:block;}
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;}
+.sc{display:flex;align-items:center;gap:8px;padding:10px 12px;background:var(--cr);border-radius:10px;text-decoration:none;color:var(--tx);font-size:.79rem;font-weight:600;border:1.5px solid var(--cd);transition:all .18s;}
+.sc:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);}
+.ds{background:linear-gradient(135deg,var(--emd),var(--em));border-radius:14px;padding:20px;text-align:center;position:relative;overflow:hidden;}
+.ds::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0,rgba(255,255,255,.03) 1px,transparent 0,transparent 50%);background-size:20px 20px;}
+.ds h3{font-family:'Amiri',serif;font-size:1.25rem;color:#fff;margin-bottom:4px;position:relative;}
+.ds p{font-size:.79rem;color:rgba(255,255,255,.68);margin-bottom:14px;position:relative;}
+.da{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-bottom:13px;position:relative;}
+.dab{padding:7px 15px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);color:#fff;border-radius:20px;font-weight:600;font-size:.83rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.dab:hover,.dab.sel{background:var(--go);border-color:var(--go);box-shadow:0 3px 10px rgba(201,150,42,.4);}
+.db{padding:11px 30px;background:var(--go);color:#fff;border:none;border-radius:11px;font-family:'DM Sans',sans-serif;font-size:.92rem;font-weight:700;cursor:pointer;transition:all .2s;position:relative;box-shadow:0 4px 14px rgba(201,150,42,.38);}
+.db:hover{background:var(--gl);transform:translateY(-1px);box-shadow:0 6px 18px rgba(201,150,42,.52);}
+.t1 .ct{background:linear-gradient(135deg,#0d6b4a,#1a8a60);}
+.t2 .ct{background:linear-gradient(135deg,#1a3a5c,#2a5a8c);}
+.t3 .ct{background:linear-gradient(135deg,#5c1a2a,#8c2a3a);}
+.t4 .ct{background:linear-gradient(135deg,#3a2a1a,#6b4a2a);}
+.t5 .ct{background:linear-gradient(135deg,#1a1a5c,#2a2a8c);}
+.t6 .ct{background:linear-gradient(135deg,#2a1a5c,#4a2a8c);}
+footer{background:var(--emd);color:rgba(255,255,255,.55);text-align:center;padding:22px;font-size:.78rem;margin-top:50px;position:relative;}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
+footer .far{font-family:'Amiri',serif;font-size:1.05rem;color:var(--gl);display:block;margin-bottom:5px;}
+@media(max-width:640px){.hinner{padding:18px 14px;}.hstats{gap:14px;}.hsn{font-size:1.3rem;}.wrap{padding:20px 14px;}.grid{grid-template-columns:1fr;}.pg{grid-template-columns:repeat(2,1fr);}}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-thumb{background:var(--em);border-radius:3px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="hpat"></div>
+  <div class="hinner">
+    <div class="logo">
+      <div class="lic">🕌</div>
+      <div>
+        <h1>Mosquées de France</h1>
+        <span class="ar">مساجد فرنسا</span>
+        <span class="sub">Annuaire national des lieux de culte</span>
+      </div>
+    </div>
+    <div class="hstats">
+      <div class="hs"><span class="hsn" id="tn">—</span><span class="hsl">Mosquées</span></div>
+      <div class="hs"><span class="hsn">96</span><span class="hsl">Dép.</span></div>
+      <div class="hs"><span class="hsn">5M+</span><span class="hsl">Musulmans</span></div>
+    </div>
+  </div>
+  <div class="hline"></div>
+</header>
+<div class="pbar">
+  <div class="pbari">
+    <div class="prow">
+      <span style="font-size:.71rem;color:rgba(255,255,255,.44);margin-right:6px;">📍 Paris, Île-de-France</span>
+      <div class="pp"><strong>Fajr</strong> 05:42</div>
+      <div class="pp"><strong>Dohr</strong> 13:15</div>
+      <div class="pp now"><strong>Asr</strong> 16:28</div>
+      <div class="pp"><strong>Maghrib</strong> 19:45</div>
+      <div class="pp"><strong>Icha</strong> 21:10</div>
+    </div>
+    <div class="pd" id="pd"></div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="sa">
+    <h2>🔍 Trouvez une mosquée</h2>
+    <div class="sr">
+      <div class="sw"><span class="si2">🔎</span><input type="text" class="si" id="qi" placeholder="Nom, ville, code postal..." oninput="fil()"></div>
+      <select class="fs" id="ri" onchange="fil()">
+        <option value="">Toutes les régions</option>
+        <option>Île-de-France</option>
+        <option>Auvergne-Rhône-Alpes</option>
+        <option>Provence-Alpes-Côte d'Azur</option>
+        <option>Occitanie</option>
+        <option>Hauts-de-France</option>
+        <option>Nouvelle-Aquitaine</option>
+        <option>Grand Est</option>
+        <option>Normandie</option>
+        <option>Pays de la Loire</option>
+        <option>Bretagne</option>
+      </select>
+      <select class="fs" id="ti" onchange="fil()">
+        <option value="">Tous les types</option>
+        <option>Mosquée</option>
+        <option>Salle de prière</option>
+        <option>Centre islamique</option>
+      </select>
+      <button class="lb" onclick="loc()">📍 Me localiser</button>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab on" onclick="sv('all',this)">Toutes</button>
+    <button class="tab" onclick="sv('feat',this)">⭐ À la une</button>
+    <button class="tab" onclick="sv('lnk',this)">🌐 Avec liens</button>
+  </div>
+  <div class="rinfo" id="ri2"></div>
+  <div class="grid" id="gr"></div>
+</div>
+<footer>
+  <span class="far">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
+  Mosquées de France © 2025 — Annuaire participatif · Données Seine-Saint-Denis (93)<br>
+  <small style="color:rgba(255,255,255,.3);margin-top:4px;display:inline-block;">Pour ajouter ou modifier une mosquée, envoyez votre fichier Excel complété</small>
+</footer>
+<div class="mo" id="mo" onclick="cbg(event)">
+  <div class="modal" id="mdl">
+    <div class="mh" id="mh">
+      <button class="mcl" onclick="cm()">✕</button>
+      <div class="mho"><div class="mhar" id="mar"></div><div class="mhn" id="mn2"></div></div>
+    </div>
+    <div class="mb" id="mb"></div>
+  </div>
+</div>
+<script>
+const M=[
+  {id:1,n:"Mosquée de la Fraternité",ar:"",ty:"Mosquée",rg:"Île-de-France",ci:"Aubervilliers",ad:"112 Bd Félix Faure",cp:"93300",lk:{},ph:"",ft:false},
+  {id:2,n:"Mosquée Al-Ansar",ar:"مسجد الأنصار",ty:"Mosquée",rg:"Île-de-France",ci:"Aubervilliers",ad:"5 Rle de la Grande Cour",cp:"93300",lk:{},ph:"+33148392697",ft:false},
+  {id:3,n:"Mosquée Jamé Bangladesh",ar:"",ty:"Salle de prière",rg:"Île-de-France",ci:"Aubervilliers",ad:"6 Rue Guyard Delalain",cp:"93300",lk:{},ph:"+33605661089",ft:false},
+  {id:4,n:"Grande Mosquée Al-Irchad",ar:"مسجد الإرشاد",ty:"Mosquée",rg:"Île-de-France",ci:"Aulnay-sous-Bois",ad:"11 Rue Louison Bobet",cp:"93600",lk:{},ph:"",ft:true},
+  {id:5,n:"Mosquée de Chanteloup",ar:"",ty:"Salle de prière",rg:"Île-de-France",ci:"Aulnay-sous-Bois",ad:"",cp:"93600",lk:{},ph:"",ft:false},
+  {id:6,n:"Mosquée Assalam (ACMA)",ar:"مسجد السلام",ty:"Mosquée",rg:"Île-de-France",ci:"Aulnay-sous-Bois",ad:"283 Chem. de Roissy en France",cp:"93600",lk:{},ph:"",ft:false},
+  {id:7,n:"Mosquée Jacques Anquetil",ar:"",ty:"Mosquée",rg:"Île-de-France",ci:"Aulnay-sous-Bois",ad:"11 Rue Jacques Anquetil",cp:"93600",lk:{},ph:"",ft:false},
+  {id:8,n:"Grande Mosquée de Bagnolet",ar:"المسجد الكبير ببانيوليه",ty:"Mosquée",rg:"Île-de-France",ci:"Bagnolet",ad:"60 Rue Hoche",cp:"93170",lk:{},ph:"+33668303232",ft:true},
+  {id:9,n:"Centre Culturel Musulman Zeytouna",ar:"مركز زيتونة الثقافي",ty:"Mosquée",rg:"Île-de-France",ci:"Bagnolet",ad:"45 Rue Charles Delescluze",cp:"93170",lk:{},ph:"+33148573477",ft:false},
+  {id:10,n:"Mosquée du Cimetière Musulman",ar:"",ty:"Mosquée",rg:"Île-de-France",ci:"Bobigny",ad:"38 Rue Arago",cp:"93000",lk:{},ph:"",ft:false},
+  {id:11,n:"Salle de prière Salvador Allende",ar:"",ty:"Salle de prière",rg:"Île-de-France",ci:"Bobigny",ad:"21 Av. du Président Salvador Allende",cp:"93000",lk:{},ph:"",ft:false},
+  {id:12,n:"Mosquée de l'Étoile",ar:"مسجد النجمة",ty:"Mosquée",rg:"Île-de-France",ci:"Bobigny",ad:"56 Rue de l'Étoile",cp:"93000",lk:{},ph:"",ft:false},
+  {id:13,n:"Grande Mosquée de Bobigny Assalam",ar:"مسجد السلام بوبيني",ty:"Mosquée",rg:"Île-de-France",ci:"Bobigny",ad:"14 Rue de la Bergère",cp:"93000",lk:{},ph:"",ft:true},
+  {id:14,n:"Association Islam pour Tous",ar:"",ty:"Mosquée",rg:"Île-de-France",ci:"Bondy",ad:"56 Chem. de Groslay",cp:"93140",lk:{},ph:"+33148470786",ft:false},
+  {id:15,n:"Mosquée de Bondy",ar:"مسجد بوندي",ty:"Mosquée",rg:"Île-de-France",ci:"Bondy",ad:"43 Rue Louis Auguste Blanqui",cp:"93140",lk:{},ph:"",ft:false},
+  {id:16,n:"Grande Mosquée de Bondy",ar:"المسجد الكبير ببوندي",ty:"Mosquée",rg:"Île-de-France",ci:"Bondy",ad:"58 Chem. de Groslay",cp:"93140",lk:{},ph:"+33954790786",ft:true},
+  {id:17,n:"Mosquée Bilal",ar:"مسجد بلال",ty:"Mosquée",rg:"Île-de-France",ci:"Clichy-sous-Bois",ad:"9 All. de la Forestière",cp:"93390",lk:{},ph:"",ft:false},
+  {id:18,n:"Mosquée Bilal Romain Rolland",ar:"",ty:"Salle de prière",rg:"Île-de-France",ci:"Clichy-sous-Bois",ad:"All. Romain Rolland",cp:"93390",lk:{},ph:"",ft:false},
+  {id:19,n:"Grande Mosquée de Drancy",ar:"المسجد الكبير بدرانسي",ty:"Mosquée",rg:"Île-de-France",ci:"Drancy",ad:"60 Rue Saint-Stenay",cp:"93700",lk:{},ph:"",ft:true},
+  {id:20,n:"Mosquée Nouh",ar:"مسجد نوح",ty:"Mosquée",rg:"Île-de-France",ci:"Dugny",ad:"6 Rue Louise Michel",cp:"93440",lk:{},ph:"+33183377584",ft:false},
+  {id:21,n:"Mosquée El Ihsan",ar:"مسجد الإحسان",ty:"Mosquée",rg:"Île-de-France",ci:"Le Blanc-Mesnil",ad:"160 Rue Maxime Gorki",cp:"93150",lk:{},ph:"",ft:false},
+  {id:22,n:"Mosquée At-Tawhid",ar:"مسجد التوحيد",ty:"Mosquée",rg:"Île-de-France",ci:"Le Blanc-Mesnil",ad:"90 Av. Danielle Casanova",cp:"93150",lk:{},ph:"",ft:false},
+  {id:23,n:"Mosquée du Londeau",ar:"",ty:"Mosquée",rg:"Île-de-France",ci:"Noisy-le-Sec",ad:"38 Chem. de Montreuil à Claye",cp:"93110",lk:{},ph:"",ft:false},
+  {id:24,n:"Grande Mosquée de Rosny",ar:"المسجد الكبير بروسني",ty:"Mosquée",rg:"Île-de-France",ci:"Rosny-sous-Bois",ad:"8 Rue Conrad Adenauer",cp:"93110",lk:{},ph:"",ft:false},
+  {id:25,n:"Mosquée Al-Fath",ar:"مسجد الفتح",ty:"Mosquée",rg:"Île-de-France",ci:"Noisy-le-Sec",ad:"134 Rue de Brément",cp:"93130",lk:{},ph:"",ft:false},
+  {id:26,n:"Mosquée Hamza",ar:"مسجد حمزة",ty:"Mosquée",rg:"Île-de-France",ci:"Pantin",ad:"7 Rue Honoré",cp:"93500",lk:{},ph:"",ft:false},
+  {id:27,n:"Grande Mosquée de Pantin",ar:"المسجد الكبير بانتان",ty:"Mosquée",rg:"Île-de-France",ci:"Pantin",ad:"48 Rue Racine",cp:"93500",lk:{},ph:"",ft:true},
+  {id:28,n:"Mosquée Othmane",ar:"مسجد عثمان",ty:"Mosquée",rg:"Île-de-France",ci:"Sevran",ad:"49 Chem. de Savigny",cp:"93270",lk:{},ph:"",ft:false},
+  {id:29,n:"Mosquée El Rahma",ar:"مسجد الرحمة",ty:"Mosquée",rg:"Île-de-France",ci:"Sevran",ad:"52 Av. du Dr Schaffner",cp:"93270",lk:{},ph:"",ft:false},
+  {id:30,n:"Grande Mosquée de Stains",ar:"المسجد الكبير باستان",ty:"Mosquée",rg:"Île-de-France",ci:"Stains",ad:"7-13 Av. de Stalingrad",cp:"93240",lk:{},ph:"",ft:false},
+  {id:31,n:"Grande Mosquée de Tremblay",ar:"المسجد الكبير بترمبلي",ty:"Mosquée",rg:"Île-de-France",ci:"Tremblay-en-France",ad:"30 Av. de la Résistance",cp:"93290",lk:{},ph:"",ft:false},
+  {id:32,n:"Grande Mosquée de Villepinte",ar:"المسجد الكبير بفيلبانت",ty:"Mosquée",rg:"Île-de-France",ci:"Villepinte",ad:"1 Av. Pasteur",cp:"93420",lk:{},ph:"",ft:false},
+  {id:33,n:"Mosquée Imam Malik",ar:"مسجد الإمام مالك",ty:"Mosquée",rg:"Île-de-France",ci:"Saint-Denis",ad:"115 Rue Henri Barbusse",cp:"93200",lk:{},ph:"",ft:true},
+  {id:34,n:"Mosquée Niya",ar:"مسجد نية",ty:"Mosquée",rg:"Île-de-France",ci:"Romainville",ad:"43 Rue des Chantaloups",cp:"93280",lk:{web:"https://mosquee-romainville.fr/"},ph:"01 48 44 52 06",ft:false},
+  {id:35,n:"Grande Mosquée de Paris",ar:"المسجد الكبير بباريس",ty:"Mosquée",rg:"Île-de-France",ci:"Paris 5e",ad:"2 bis place du Puits de l'Ermite",cp:"75005",lk:{web:"https://www.mosquee-de-paris.org",fb:"https://facebook.com",yt:"https://youtube.com",insta:"https://instagram.com"},ph:"01 45 35 97 33",ft:true},
+  {id:36,n:"Grande Mosquée de Lyon",ar:"المسجد الكبير بليون",ty:"Mosquée",rg:"Auvergne-Rhône-Alpes",ci:"Lyon 8e",ad:"146 boulevard Pinel",cp:"69008",lk:{web:"https://grandemosqueedelivon.fr",fb:"https://facebook.com",yt:"https://youtube.com",insta:"https://instagram.com"},ph:"",ft:true},
+  {id:37,n:"Grande Mosquée de Toulouse",ar:"المسجد الكبير بتولوز",ty:"Mosquée",rg:"Occitanie",ci:"Toulouse",ad:"58 chemin de Gabelle",cp:"31300",lk:{web:"https://mosquee-toulouse.fr",fb:"https://facebook.com",yt:"https://youtube.com",insta:"https://instagram.com"},ph:"",ft:true},
+  {id:38,n:"Grande Mosquée de Strasbourg",ar:"مسجد ستراسبورغ",ty:"Mosquée",rg:"Grand Est",ci:"Strasbourg",ad:"12 rue Averroès",cp:"67000",lk:{web:"https://mosquee-strasbourg.fr",fb:"https://facebook.com",insta:"https://instagram.com"},ph:"",ft:true},
+  {id:39,n:"Mosquée Al-Salam Marseille",ar:"مسجد السلام مرسيليا",ty:"Mosquée",rg:"Provence-Alpes-Côte d'Azur",ci:"Marseille",ad:"45 avenue de la Croix Rouge",cp:"13013",lk:{web:"https://mosquee-alsalam.fr",fb:"https://facebook.com",insta:"https://instagram.com"},ph:"",ft:true},
+  {id:40,n:"Mosquée Essalam — Évry",ar:"مسجد السلام إيفري",ty:"Mosquée",rg:"Île-de-France",ci:"Évry",ad:"1 cours Blaise Pascal",cp:"91000",lk:{web:"https://mosqueeessalam.fr",fb:"https://facebook.com",yt:"https://youtube.com",insta:"https://instagram.com"},ph:"",ft:true}
+];
+const PS=[
+  {fajr:"05:42",dohr:"13:15",asr:"16:28",maghrib:"19:45",icha:"21:10",nw:"asr"},
+  {fajr:"05:44",dohr:"13:17",asr:"16:30",maghrib:"19:47",icha:"21:12",nw:"asr"},
+  {fajr:"05:40",dohr:"13:13",asr:"16:26",maghrib:"19:43",icha:"21:08",nw:"maghrib"},
+  {fajr:"05:46",dohr:"13:19",asr:"16:32",maghrib:"19:49",icha:"21:14",nw:"asr"}
+];
+const NB={
+  8:[{d:"3 mars 2025",t:"Travaux de rénovation",p:"La grande salle sera rénovée pendant Ramadan. Prières en salle annexe."}],
+  13:[{d:"7 mars 2025",t:"Collecte Zakat Al-Fitr",p:"Le comité social organise la collecte et distribution du Zakat Al-Fitr."}],
+  16:[{d:"2 mars 2025",t:"Programme Ramadan 2025",p:"Programme complet des activités, iftars collectifs et conférences."},{d:"20 fév. 2025",t:"Cours d'arabe adultes",p:"Reprise des cours d'arabe pour adultes, tous niveaux acceptés."}],
+  19:[{d:"6 mars 2025",t:"Khoutba en direct",p:"Le prêche du vendredi diffusé en direct sur notre page Facebook."}],
+  27:[{d:"4 mars 2025",t:"Réunion communautaire",p:"Assemblée générale ouverte à tous — samedi 15 mars à 14h."}],
+  33:[{d:"8 mars 2025",t:"Inauguration du minaret rénové",p:"Cérémonie d'inauguration prévue fin mars."}],
+  35:[{d:"8 mars 2025",t:"Conférence internationale",p:"La Grande Mosquée accueille une conférence sur l'Islam en Europe."},{d:"1 mars 2025",t:"Cours de Coran",p:"Sessions hebdomadaires disponibles pour tous niveaux."}],
+  36:[{d:"5 mars 2025",t:"École coranique — Nouvelles places",p:"Nouvelles places disponibles pour les 6-12 ans le samedi matin."}],
+  40:[{d:"8 mars 2025",t:"Khoutba du vendredi en ligne",p:"Retrouvez notre prêche hebdomadaire en direct sur YouTube."}]
+};
+const TH=["t1","t2","t3","t4","t5","t6"];
+const GR={t1:"linear-gradient(135deg,#0d6b4a,#1a8a60)",t2:"linear-gradient(135deg,#1a3a5c,#2a5a8c)",t3:"linear-gradient(135deg,#5c1a2a,#8c2a3a)",t4:"linear-gradient(135deg,#3a2a1a,#6b4a2a)",t5:"linear-gradient(135deg,#1a1a5c,#2a2a8c)",t6:"linear-gradient(135deg,#2a1a5c,#4a2a8c)"};
+M.forEach((m,i)=>{m.pr=PS[i%PS.length];m.nw=NB[m.id]||[];m.th=TH[i%TH.length];});
+let vw='all',sa=20;
+function pl(k){return{fajr:"Fajr",dohr:"Dohr",asr:"Asr",maghrib:"Maghrib",icha:"Icha"}[k]||k;}
+function ev2(e){e.stopPropagation();}
+function rnd(lst){
+  const g=document.getElementById('gr');
+  document.getElementById('ri2').innerHTML=`<strong>${lst.length}</strong> mosquée${lst.length>1?'s':''} trouvée${lst.length>1?'s':''}`;
+  document.getElementById('tn').textContent=M.length+'+';
+  if(!lst.length){g.innerHTML=`<div class="empty"><span class="ico">🕌</span><h3>Aucune mosquée trouvée</h3><p>Essayez d'autres critères.</p></div>`;return;}
+  g.innerHTML=lst.map((m,i)=>`
+    <div class="card ${m.th}" onclick="om(${m.id})" style="animation-delay:${i*.04}s">
+      <div class="ct">
+        <svg viewBox="0 0 200 88" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="p${m.id}" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <polygon points="20,2 38,11 38,29 20,38 2,29 2,11" fill="none" stroke="white" stroke-width=".9"/>
+            <line x1="20" y1="2" x2="20" y2="38" stroke="white" stroke-width=".4"/>
+            <line x1="2" y1="20" x2="38" y2="20" stroke="white" stroke-width=".4"/>
+          </pattern></defs>
+          <rect width="200" height="88" fill="url(#p${m.id})"/>
+        </svg>
+        <div class="cti">
+          <span class="br">${m.rg}</span>
+          <span class="bc">📍 ${m.ci} ${m.cp}</span>
+        </div>
+        ${m.ty!=='Mosquée'?`<span class="bt">${m.ty}</span>`:''}
+      </div>
+      <div class="cb">
+        <div class="mn">${m.n}</div>
+        ${m.ar?`<span class="mnar">${m.ar}</span>`:'<div style="margin-bottom:7px"></div>'}
+        ${m.ad?`<div class="mad"><span>📌</span><span>${m.ad}</span></div>`:''}
+        <div class="pm">
+          ${Object.entries(m.pr).filter(([k])=>k!=='nw').map(([k,v])=>`<div class="pi"><span class="pn">${pl(k)}</span><span class="pt ${m.pr.nw===k?'nw':''}">${v}</span></div>`).join('')}
+        </div>
+        <div class="chs">
+          ${m.lk.web?`<a href="${m.lk.web}" class="ch cw" target="_blank" onclick="ev2(event)">🌐 Site</a>`:''}
+          ${m.lk.fb?`<a href="${m.lk.fb}" class="ch cf" target="_blank" onclick="ev2(event)">f FB</a>`:''}
+          ${m.lk.insta?`<a href="${m.lk.insta}" class="ch ci" target="_blank" onclick="ev2(event)">📸 Insta</a>`:''}
+          ${m.lk.yt?`<a href="${m.lk.yt}" class="ch cy" target="_blank" onclick="ev2(event)">▶ YT</a>`:''}
+          ${m.lk.tg?`<a href="${m.lk.tg}" class="ch ctg" target="_blank" onclick="ev2(event)">✈ TG</a>`:''}
+          ${m.ph?`<span class="ch cph">📞 ${m.ph}</span>`:''}
+        </div>
+        <div class="cf2">
+          <button class="bdon" onclick="odon(${m.id},event)">💛 Faire un don</button>
+          <button class="bm">Détails →</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+function fil(){
+  const q=document.getElementById('qi').value.toLowerCase();
+  const r=document.getElementById('ri').value;
+  const t=document.getElementById('ti').value;
+  const lst=M.filter(m=>{
+    const mq=!q||[m.n,m.ci,m.cp,m.ad,m.rg].some(s=>s&&s.toLowerCase().includes(q));
+    const mr=!r||m.rg===r;
+    const mt=!t||m.ty===t;
+    const mv=vw==='feat'?m.ft:vw==='lnk'?Object.keys(m.lk).length>0:true;
+    return mq&&mr&&mt&&mv;
+  });
+  rnd(lst);
+}
+function sv(v,btn){vw=v;document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');fil();}
+function loc(){
+  const b=document.querySelector('.lb');
+  b.textContent='⌛ Localisation...';
+  setTimeout(()=>{
+    b.textContent='✅ 93 détecté';
+    document.getElementById('ri').value='Île-de-France';
+    fil();
+    setTimeout(()=>{b.textContent='📍 Me localiser';},2000);
+  },1100);
+}
+function om(id){
+  const m=M.find(x=>x.id===id);
+  if(!m)return;
+  document.getElementById('mar').textContent=m.ar||'';
+  document.getElementById('mn2').textContent=m.n;
+  document.getElementById('mh').style.background=GR[m.th]||GR.t1;
+  const ico={web:'🌐',fb:'f',insta:'📸',yt:'▶',tg:'✈'};
+  const lbl={web:'Site web',fb:'Facebook',insta:'Instagram',yt:'YouTube',tg:'Telegram'};
+  const nh=m.nw.length?m.nw.map(n=>`<div class="ni"><span class="nd">${n.d}</span><h4>${n.t}</h4><p>${n.p}</p></div>`).join(''):`<p style="color:var(--ts);font-size:.82rem;">Aucune actualité récente.</p>`;
+  const sh=Object.entries(m.lk).map(([k,v])=>`<a href="${v}" class="sc" target="_blank">${ico[k]} ${lbl[k]}</a>`).join('');
+  document.getElementById('mb').innerHTML=`
+    <div class="ms">
+      <div style="font-size:.82rem;color:var(--ts);display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        ${m.ad?`<span>📌 ${m.ad}, <strong>${m.cp} ${m.ci}</strong></span>`:`<span>📍 <strong>${m.cp} ${m.ci}</strong></span>`}
+        <span>🗺 ${m.rg}</span>
+        ${m.ph?`<span>📞 ${m.ph}</span>`:''}
+        <span style="font-size:.7rem;background:rgba(13,107,74,.1);color:var(--em);padding:2px 8px;border-radius:10px;">${m.ty}</span>
+      </div>
+    </div>
+    <div class="ms">
+      <h3 class="mst">🕐 Horaires de prières du jour</h3>
+      <div class="pg">
+        ${Object.entries(m.pr).filter(([k])=>k!=='nw').map(([k,v])=>`<div class="pit ${m.pr.nw===k?'nw':''}"><span class="pn2">${pl(k)}</span><span class="pt2">${v}</span></div>`).join('')}
+      </div>
+    </div>
+    <div class="ms"><h3 class="mst">📢 Actualités</h3>${nh}</div>
+    ${sh?`<div class="ms"><h3 class="mst">🌐 Réseaux & liens</h3><div class="sg">${sh}</div></div>`:''}
+    <div class="ms ds">
+      <h3>💛 Soutenir cette mosquée</h3>
+      <p>Votre don contribue à l'entretien et aux projets communautaires.</p>
+      <div class="da">
+        ${[5,10,20,50,100].map(a=>`<button class="dab ${a===sa?'sel':''}" onclick="sla(${a},this)">${a} €</button>`).join('')}
+      </div>
+      <button class="db" onclick="ddn('${m.n.replace(/'/g,"\\'")}')">Faire un don de <span id="damt">${sa}</span> € 🤲</button>
+    </div>
+  `;
+  document.getElementById('mo').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function odon(id,e){e.stopPropagation();om(id);setTimeout(()=>document.querySelector('.ds')?.scrollIntoView({behavior:'smooth',block:'center'}),380);}
+function cm(){document.getElementById('mo').classList.remove('open');document.body.style.overflow='';}
+function cbg(e){if(e.target===document.getElementById('mo'))cm();}
+function sla(a,btn){sa=a;document.querySelectorAll('.dab').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');const el=document.getElementById('damt');if(el)el.textContent=a;}
+function ddn(n){alert(`Merci pour votre générosité ! 🤲\n\nVotre don de ${sa} € à « ${n} » va être traité.\n\nJazakum Allahu Khayran.`);cm();}
+document.getElementById('pd').textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+' · 9 Ramadan 1446';
+fil();
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cm();});
+</script>
+</body>
+</html>
